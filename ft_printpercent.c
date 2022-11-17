@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printstr.c                                      :+:      :+:    :+:   */
+/*   ft_printpercent.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ouel-maj <ouel-maj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/16 15:08:26 by ouel-maj          #+#    #+#             */
-/*   Updated: 2022/11/17 13:30:15 by ouel-maj         ###   ########.fr       */
+/*   Created: 2022/11/17 11:06:43 by ouel-maj          #+#    #+#             */
+/*   Updated: 2022/11/17 11:06:50 by ouel-maj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-int	ft_printstr(char *str)
+#include <unistd.h>
+int ft_printpercent(void)
 {
-	int	i;
-
-	i = 0;
-	if (str == NULL)
-	{
-		ft_printstr("(null)");
-		return (6);
-	}
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-	return (i);
+    write(1, "%", 1);
+    return 1;
 }

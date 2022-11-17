@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oussama <oussama@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ouel-maj <ouel-maj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 15:50:46 by ouel-maj          #+#    #+#             */
-/*   Updated: 2022/11/16 16:49:02 by oussama          ###   ########.fr       */
+/*   Updated: 2022/11/17 13:32:08 by ouel-maj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ int	format(va_list args, const char format)
 	if (format == 'c')
 		print_length += ft_printchar(va_arg(args, int));
 	else if (format == 's')
-	{
 		print_length += ft_printstr(va_arg(args, char *));
-	}
-	else if (format == 'd')
-	{
+	else if (format == 'd' || format == 'i')
 		print_length += ft_printnbr(va_arg(args, int));
-	}
+	else if (format == '%')
+		print_length += ft_printpercent();
+	else if(format == 'u')
+		print_length += ft_printunsigned(va_arg(args, unsigned long long));
 	return (print_length);
 }
 
@@ -54,10 +54,9 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (print_length);
 }
-#include <stdio.h>
-int main(void)
-{
-	ft_printf("ft_caca : %c %c %c", '0', '0', '1');
-	ft_printf("ft_printf : %c %c ", 'd', 'f');
-	// printf("\n printf   : %c %c %c ", '0', '1', 1);
-}
+// #include <stdio.h>
+// int main(void)
+// {
+// 	ft_printf("ft_printf : %u", 4294967294);
+// 	printf("\n printf   : %u", 4294967294);
+// }
