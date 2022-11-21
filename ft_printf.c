@@ -6,7 +6,7 @@
 /*   By: ouel-maj <ouel-maj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 15:50:46 by ouel-maj          #+#    #+#             */
-/*   Updated: 2022/11/17 13:32:08 by ouel-maj         ###   ########.fr       */
+/*   Updated: 2022/11/21 12:58:14 by ouel-maj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ int	format(va_list args, const char format)
 		print_length += ft_printnbr(va_arg(args, int));
 	else if (format == '%')
 		print_length += ft_printpercent();
-	else if(format == 'u')
-		print_length += ft_printunsigned(va_arg(args, unsigned long long));
+	else if (format == 'u')
+		print_length += ft_printunsigned(va_arg(args, unsigned int));
+	else if (format == 'x' || format == 'X')
+		print_length += ft_printhexa(va_arg(args, unsigned int), format);
 	return (print_length);
 }
 
@@ -57,6 +59,6 @@ int	ft_printf(const char *str, ...)
 // #include <stdio.h>
 // int main(void)
 // {
-// 	ft_printf("ft_printf : %u", 4294967294);
-// 	printf("\n printf   : %u", 4294967294);
+// 	ft_printf("ft_printf   : %X", 26);
+// 	printf("\n printf   : %X", 26);
 // }
