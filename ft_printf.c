@@ -6,7 +6,7 @@
 /*   By: ouel-maj <ouel-maj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 15:50:46 by ouel-maj          #+#    #+#             */
-/*   Updated: 2022/11/21 12:58:14 by ouel-maj         ###   ########.fr       */
+/*   Updated: 2022/12/29 17:50:27 by ouel-maj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,19 @@ int	format(va_list args, const char format)
 		print_length += ft_printunsigned(va_arg(args, unsigned int));
 	else if (format == 'x' || format == 'X')
 		print_length += ft_printhexa(va_arg(args, unsigned int), format);
+	else if (format == 'p')
+		print_length += ft_print_ptr(va_arg(args, unsigned long long));
 	return (print_length);
 }
 
 int	ft_printf(const char *str, ...)
 {
-	int	i;
-	int	print_length;
+	int		i;
+	int		print_length;
+	va_list	args;
 
 	print_length = 0;
 	i = 0;
-	va_list		args;
 	va_start(args, str);
 	while (str[i])
 	{
@@ -56,9 +58,15 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (print_length);
 }
-// #include <stdio.h>
-// int main(void)
+
+// #include<stdio.h>
+// int	main(void)
 // {
-// 	ft_printf("ft_printf   : %X", 26);
-// 	printf("\n printf   : %X", 26);
+// 	char	a;
+// 	char	*b;
+
+// 	b = "hello";
+// 	a = 'n';
+// 	ft_printf("%1c, %1c, %1c\n", '5', 'x', '\n');
+// 	printf("printf; %1c, %1c, %1c", '5', 'x', '\n');
 // }

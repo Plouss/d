@@ -6,7 +6,7 @@
 /*   By: ouel-maj <ouel-maj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 15:03:37 by ouel-maj          #+#    #+#             */
-/*   Updated: 2022/11/21 12:59:30 by ouel-maj         ###   ########.fr       */
+/*   Updated: 2022/12/29 17:28:41 by ouel-maj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,7 @@ int		ft_hex_len(unsigned	int num);
 void	ft_put_hex(unsigned int num, const char format);
 int		ft_printhexa(unsigned int num, const char format);
 void	ft_putchar_fd(char c, int fd);
+int		ft_ptr_len(uintptr_t num);
+void	ft_put_ptr(uintptr_t num);
+int		ft_print_ptr(unsigned long long ptr);
 #endif

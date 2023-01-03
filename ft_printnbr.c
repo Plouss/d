@@ -6,7 +6,7 @@
 /*   By: ouel-maj <ouel-maj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 15:06:58 by ouel-maj          #+#    #+#             */
-/*   Updated: 2022/11/21 13:12:40 by ouel-maj         ###   ########.fr       */
+/*   Updated: 2022/12/29 17:29:13 by ouel-maj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ char	*ft_itoa(int n)
 	int		len;
 	char	*res;
 	char	modulo;
+
 	if (n == 0)
 		return (ft_strdup("0"));
 	len = ft_checklen(n);
